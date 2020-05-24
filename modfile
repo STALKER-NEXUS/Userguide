@@ -1,0 +1,52 @@
+# modfile version 0.2r
+
+# Версия движка для запуска модификации
+ENGINE shoc:1.0004
+# Тип модификации 
+TYPEMODE modification
+
+# Версия мода
+VERSION 1.2
+
+# обязательный список файлов 
+FILES 
+    modfile1.db1
+    modfile1.db2
+    modfile1.db3
+    bin.bin
+
+# Установка своего кастомного слеш изображения без необходимости прошивать exe файл
+# Поддерживаемые форматы .png .jpg .webp
+SPLASH $mod$/custom/splash.png 
+
+# test
+# EXEC $mod/custom/test.script
+
+
+# Монтируем / заменяем папки или файлы 
+
+# Флаг TYPE:
+# для папки используем TYPE:folder а для dbx архивов используем TYPE:db
+
+# Флаг ACTION: 
+# ACTION mount - монтирование файла из каталога мода
+# ACTION change - замещение каталога на новый
+
+# Флаг FROM:
+# Указываем какой файл и откуда брать . переменная $mod$ - служит для указания папки модацификайи (/nexusroot/mods/XXXX)
+
+# Флаг TO: 
+# Указываем конечную точку файла с именем
+
+# Флаг HASH:
+# Если true то включить подсчет контрольнной суммы из файла древа modls
+# Если false то отключить подсчет контрольнной суммы из файла древа modls
+
+MOUNT 
+    TYPE db; FROM $mod$/modfile1.db1; TO $game$/modfile1.db1; HASH true; ACTION mount
+    TYPE db; FROM $mod$/modfile1.db2; TO $game$/modfile1.db2; HASH true; ACTION mount
+    TYPE db; FROM $mod$/modfile1.db3; TO $game$/modfile1.db3; HASH true; ACTION mount
+    TYPE folder; FROM $mod$/bin.bin; TO $game$/bin/; HASH true; ACTION change
+
+# Запуск txt файла после монтирования
+RUN $game%/bin/xrGame.exe -window 
