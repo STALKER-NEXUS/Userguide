@@ -7,6 +7,6 @@
 
 ## Содержание 
 - <a href="modfile.md"> Modfile - файл инструкций для лаунчера </a>
-- <a href="teleport.md"> Подготовка к переносу мода на наш сервис </a>
+- <a href="teleport.md"> Подготовка к переносу мода </a>
 - <a href="custom.md"> Кастомная папка</a>
 - <a href="custom-launcher.md">Кастомный лаунчер папка</a>
